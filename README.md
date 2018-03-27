@@ -24,13 +24,31 @@
   - git - `sudo apt-get install git`
   - psycopg2 - `sudo pip install psycopg2`
   - psycopg2-binary - `sudo pip install pyscopg2-binary`
+* Unattended upgrades
+ - Configured as per [this](https://help.ubuntu.com/lts/serverguide/automatic-updates.html)
 
 # Firewall configuration to allow ssh (port 2200), http (port 80) and ntp (port 123)
+  - `sudo ufw default deny incoming`
+  - `sudo ufw default allow outgoing`
   - `sudo ufw allow ssh`
   - `sudo ufw allow 2200/tcp`
   - `sudo ufw allow www`
   - `sudo ufw allow ntp`
+  - `sudo ufw delete allow 22`
   - `sudo ufw enable`
+  - `sudo ufw status` shows as below
+```
+Status: active
+
+To                         Action      From
+--                         ------      ----
+80/tcp                     ALLOW       Anywhere
+123                        ALLOW       Anywhere
+2200/tcp                   ALLOW       Anywhere
+80/tcp (v6)                ALLOW       Anywhere (v6)
+123 (v6)                   ALLOW       Anywhere (v6)
+2200/tcp (v6)              ALLOW       Anywhere (v6)
+```
 
 # grader account access using ssh key and sudo access
 * grader account key included with the submissions.
@@ -82,4 +100,5 @@
 * [Ghoshabhi](https://github.com/ghoshabhi/P5-Linux-Config)
 * [Steve Wooding](https://github.com/SteveWooding/fullstack-nanodegree-linux-server-config)
 * [Stueken](https://github.com/stueken/FSND-P5_Linux-Server-Configuration)
+* [Unattended-Upgrades](https://help.ubuntu.com/lts/serverguide/automatic-updates.html)
 
