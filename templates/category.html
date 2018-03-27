@@ -1,0 +1,28 @@
+{% extends "main.html" %} 
+{% block content %} 
+{% include "header.html" %}
+<div class="row">
+    <div class="container-fluid">
+        <div class="col-md-3">
+            <h2>Categories</h2>
+            <ul class="list-unstyled">
+                {% for cat in all_categories %}
+                <a href="{{url_for('showCategoryItems', category_name = cat.name)}}">
+                    <li><strong style="color:red;">{{cat.name}}</strong></li>
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-9" style="border-left:1px solid #F1F1F1">
+            <h2>{{category.name}} Items ({{item_count}} items)</h2>
+            <ul class="list-unstyled">
+                {% for i in items %}
+                <a href="{{url_for('showItemDetails', category_name = category.name, item = i.name)}}">
+                    <li><strong style="color:red;">{{i.name}}</strong> </li>
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

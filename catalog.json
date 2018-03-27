@@ -1,0 +1,88 @@
+{
+  "Category": [
+    {
+      "Item": [
+        {
+          "id": 1, 
+          "cat_id": 1, 
+          "name": "Shinguards", 
+          "description": "Shinguards are use to protect the shins"
+        }, 
+        {
+          "id": 2, 
+          "cat_id": 1, 
+          "name": "Two shinguards", 
+          "description": "Pair of Shinguards"
+        }
+      ], 
+      "name": "Soccer", 
+      "id": 1
+    }, 
+    {
+      "Item": [
+        {
+          "id": 3, 
+          "cat_id": 2, 
+          "name": "Goggles", 
+          "description": "Goggles for snowboarding"
+        }, 
+        {
+          "id": 4, 
+          "cat_id": 2, 
+          "name": "Snowboards", 
+          "description": "Best for any terrain and conditions. All mountain snowboards "
+        }
+      ], 
+      "name": "Snowboarding", 
+      "id": 2
+    }, 
+    {
+      "Item": [
+        {
+          "id": 5, 
+          "cat_id": 3, 
+          "name": "Racket", 
+          "description": "Best Tennis racket in the world"
+        }
+      ], 
+      "name": "Tennis", 
+      "id": 3
+    }, 
+    {
+      "Item": [
+        {
+          "id": 6, 
+          "cat_id": 4, 
+          "name": "Bat", 
+          "description": "Bat authorized by the Master himself"
+        }, 
+        {
+          "id": 7, 
+          "cat_id": 4, 
+          "name": "Balls", 
+          "description": "Kookaburra balls"
+        }, 
+        {
+          "id": 8, 
+          "cat_id": 4, 
+          "name": "Pads and gloves", 
+          "description": "Pads and gloves for maximum safety"
+        }
+      ], 
+      "name": "Cricket", 
+      "id": 4
+    }, 
+    {
+      "Item": [
+        {
+          "id": 9, 
+          "cat_id": 5, 
+          "name": "Stick", 
+          "description": "Field Hockey Stick"
+        }
+      ], 
+      "name": "Hockey", 
+      "id": 5
+    }
+  ]
+}

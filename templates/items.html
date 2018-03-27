@@ -1,0 +1,15 @@
+{% extends "main.html" %} 
+{% block content %} 
+{% include "header.html" %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10">
+            <h2>{{item}}</h2>
+            <ul class="list-unstyled">
+                <li>Description: {{description}}</li>
+            </ul>
+            <a href="{{url_for('editCatalogItem', item=item)}}">Edit</a> | <a href="{{url_for('deleteItem', item=item)}}">Delete</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

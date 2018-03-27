@@ -1,0 +1,15 @@
+{% extends "main.html" %} 
+{% block content %} 
+{% include "header.html" %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10">
+            <h2>{{item}}</h2>
+            <ul class="list-unstyled">
+                Description:
+                <li>{{description}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
