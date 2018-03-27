@@ -47,13 +47,31 @@
 # Is there a web server running on Port 80
 * The default Apache service running on port 80 has been disabled and the catalog project is configured to use Port 80
 
-# Database configuration
-
 # Configure the catalog app as a WSGI script
-* Repository cloned as `git clone https://github.com/datechie/catalog.git`
-* Copy the catalog repository contents to /var/www/catalog
-* Create a config file at /etc/apache2/sites-enabled/catalog.conf with the below content
-* Update the paths of the client_secrets.json and fb_client_secrets.json in project.py to
+* Original catalog project repository cloned as `git clone https://github.com/datechie/catalog.git`
+* The modified content to make the project work has been added to this new repository - https://github.com/datechie/catalog-linux-server
+* The config file being used at /etc/apache2/sites-enabled/catalog.conf has been added to the new catalog-linux-server repository
+* The content modified in project.py is also available in this repository with the changes. The changes are include updating the paths of the client_secrets.json and fb_client_secrets.json and also the DB information.
+* The wsgi file - catalog.wsgi (located at /var/www/catalog on the server) file is also available in this repository
+
+# Database configuration
+* At the psql prompt, ran the following:
+  `CREATE USER catalog;`
+  `ALTER USER catalog WITH PASSWORD 'catalog';`
+  `CREATE DATABASE catalog WITH OWNER catalog; `
+  `\c catalog`
+  `REVOKE ALL ON SCHEMA public FROM public;`
+  `GRANT ALL ON SCHEMA public TO catalog;`
+* In the python code, changed the create_engine references to use `engine = create_engine('postgresql://catalog:catalog@localhost/catalog')`
+
+# OAuth
+* Updated the Google authentication to replace `http://localhost:5000` with `http://ec2-54-202-167-86.us-west-2.compute.amazonaws.com`
+* For FB, changed the Site URL to `http://ec2-54-202-167-86.us-west-2.compute.amazonaws.com/`
+
+# Final steps
+*  Disalble the default Apache site - `sudo a2dissite 000-default`
+*  Enable our new site - `sudo a2ensite catalog`
+*  Reload Apache2 - `sudo service apache2 reload`
 
 # References
 * [Flask config](http://flask.pocoo.org/docs/0.12/config/)
