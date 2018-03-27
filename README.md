@@ -9,28 +9,28 @@
 
 # Software Updates/Installs on the system
 * Check for system updates and upgrade
-  `sudo apt-get update`
-  `sudo apt-get upgrade`
+  - `sudo apt-get update`
+  - `sudo apt-get upgrade`
 * Install other required software:
-  Apache2 - `sudo apt-get install apache2`
-  wsgi - `sudo apt-get install libapache2-mod-wsgi`
-  Postgresql - `sudo apt-get install postgresql`
-  Python - `sudo apt install python2.7 python-pip`
-  Pip upgrade - `sudo pip install --upgrade pip`
-  Flask - `sudo pip install flask`
-  Requests - `sudo pip install requests`
-  oauth2client - `sudo pip install oauth2client`
-  sqlaclhemy - `sudo pip install sqlalchemy`
-  git - `sudo apt-get install git`
-  psycopg2 - `sudo pip install psycopg2`
-  psycopg2-binary - `sudo pip install pyscopg2-binary`
+  - Apache2 - `sudo apt-get install apache2`
+  - wsgi - `sudo apt-get install libapache2-mod-wsgi`
+  - Postgresql - `sudo apt-get install postgresql`
+  - Python - `sudo apt install python2.7 python-pip`
+  - Pip upgrade - `sudo pip install --upgrade pip`
+  - Flask - `sudo pip install flask`
+  - Requests - `sudo pip install requests`
+  - oauth2client - `sudo pip install oauth2client`
+  - sqlaclhemy - `sudo pip install sqlalchemy`
+  - git - `sudo apt-get install git`
+  - psycopg2 - `sudo pip install psycopg2`
+  - psycopg2-binary - `sudo pip install pyscopg2-binary`
 
 # Firewall configuration to allow ssh (port 2200), http (port 80) and ntp (port 123)
-  `sudo ufw allow ssh`
-  `sudo ufw allow 2200/tcp`
-  `sudo ufw allow www`
-  `sudo ufw allow ntp`
-  `sudo ufw enable`
+  - `sudo ufw allow ssh`
+  - `sudo ufw allow 2200/tcp`
+  - `sudo ufw allow www`
+  - `sudo ufw allow ntp`
+  - `sudo ufw enable`
 
 # grader account access using ssh key and sudo access
 * grader account key included with the submissions.
@@ -56,12 +56,12 @@
 
 # Database configuration
 * At the psql prompt, ran the following:
-  `CREATE USER catalog;`
-  `ALTER USER catalog WITH PASSWORD 'catalog';`
-  `CREATE DATABASE catalog WITH OWNER catalog; `
-  `\c catalog`
-  `REVOKE ALL ON SCHEMA public FROM public;`
-  `GRANT ALL ON SCHEMA public TO catalog;`
+  - `CREATE USER catalog;`
+  - `ALTER USER catalog WITH PASSWORD 'catalog';`
+  - `CREATE DATABASE catalog WITH OWNER catalog; `
+  - `\c catalog`
+  - `REVOKE ALL ON SCHEMA public FROM public;`
+  - `GRANT ALL ON SCHEMA public TO catalog;`
 * In the python code, changed the create_engine references to use `engine = create_engine('postgresql://catalog:catalog@localhost/catalog')`
 
 # OAuth
@@ -69,7 +69,7 @@
 * For FB, changed the Site URL to `http://ec2-54-202-167-86.us-west-2.compute.amazonaws.com/`
 
 # Final steps
-*  Disalble the default Apache site - `sudo a2dissite 000-default`
+*  Disable the default Apache site - `sudo a2dissite 000-default`
 *  Enable our new site - `sudo a2ensite catalog`
 *  Reload Apache2 - `sudo service apache2 reload`
 
